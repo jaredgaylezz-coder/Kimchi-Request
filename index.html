@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Monthsary💙</title>
+
+<style>
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+        #163d70,
+        #071b39,
+        #020817);
+}
+
+
+.decoration {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    animation: gentleFloat 5s ease-in-out infinite alternate;
+}
+
+.flower1 {
+    top: 7%;
+    left: 7%;
+    font-size: 48px;
+}
+
+.flower2 {
+    bottom: 8%;
+    right: 7%;
+    font-size: 55px;
+    animation-delay: 1s;
+}
+
+.flower3 {
+    top: 15%;
+    right: 10%;
+    font-size: 30px;
+    animation-delay: 2s;
+}
+
+.flower4 {
+    bottom: 15%;
+    left: 9%;
+    font-size: 35px;
+    animation-delay: 1.5s;
+}
+
+@keyframes gentleFloat {
+    from {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    to {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+
+
+.login {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    z-index: 2;
+
+    transition: opacity 1s ease,
+                transform 1s ease;
+}
+
+.login.hide {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+
+.teddy {
+    font-size: 85px;
+    margin-bottom: 5px;
+
+    filter: drop-shadow(0 0 20px #58baff);
+
+    animation: teddyFloat 3s ease-in-out infinite;
+}
+
+@keyframes teddyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+
+h2 {
+    color: #c5ebff;
+    font-size: 25px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+
+    text-shadow: 0 0 15px #48baff;
+}
+
+.subtitle {
+    color: #b3d9f5;
+    font-size: 13px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+
+
+.otp {
+    display: grid;
+    grid-template-columns: repeat(3, 65px);
+    gap: 20px 24px;
+
+    transform: rotate(-3deg);
+}
+
+.otp input {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 17px;
+
+    border: 1px solid rgba(119,204,255,.6);
+
+    background: rgba(255,255,255,.06);
+
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+
+    outline: none;
+    caret-color: transparent;
+
+    box-shadow: 0 0 18px rgba(0,145,255,.2);
+
+    transition: border .3s, box-shadow .3s;
+}
+
+.otp input:focus {
+    border-color: #73d5ff;
+    box-shadow: 0 0 25px #168bff;
+}
+
+
+.otp input:nth-child(1) {
+    transform: translateY(10px);
+}
+
+.otp input:nth-child(2) {
+    transform: translateY(-15px);
+}
+
+.otp input:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.otp input:nth-child(4) {
+    transform: translateY(-10px);
+}
+
+.otp input:nth-child(5) {
+    transform: translateY(15px);
+}
+
+.otp input:nth-child(6) {
+    transform: translateY(-10px);
+}
+
+#feedback {
+    color: #a9e3ff;
+    font-size: 13px;
+    margin-top: 45px;
+    min-height: 20px;
+}
+
+
+
+.otp.verifying {
+    position: relative;
+    display: block;
+
+    width: 230px;
+    height: 230px;
+
+    transform: none;
+
+    animation: smoothOrbit 7s linear forwards;
+}
+
+.otp.verifying input {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    margin: 0;
+
+    border-color: #78cfff;
+
+    box-shadow:
+        0 0 15px #168bff,
+        inset 0 0 10px rgba(70,180,255,.3);
+}
+
+
+
+.otp.verifying input:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-85px);
+}
+
+.otp.verifying input:nth-child(2) {
+    transform: translate(-50%, -50%) translate(74px, -42px);
+}
+
+.otp.verifying input:nth-child(3) {
+    transform: translate(-50%, -50%) translate(74px, 42px);
+}
+
+.otp.verifying input:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(85px);
+}
+
+.otp.verifying input:nth-child(5) {
+    transform: translate(-50%, -50%) translate(-74px, 42px);
+}
+
+.otp.verifying input:nth-child(6) {
+    transform: translate(-50%, -50%) translate(-74px, -42px);
+}
+
+
+
+@keyframes smoothOrbit {
+
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: rotate(1080deg) scale(1.05);
+        opacity: 1;
+        filter: brightness(2);
+    }
+
+    85% {
+        transform: rotate(1260deg) scale(.8);
+        opacity: .9;
+    }
+
+    100% {
+        transform: rotate(1440deg) scale(.15);
+        opacity: 0;
+        filter: brightness(3);
+    }
+}
+
+
+#verifiedMark {
+    display: none;
+
+    width: 75px;
+    height: 75px;
+
+    border: 2px solid #35e88a;
+    border-radius: 50%;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #35e88a;
+    font-size: 38px;
+
+    box-shadow: 0 0 25px rgba(53,232,138,.5);
+}
+
+#verifiedMark span {
+    animation: checkAppear .5s ease;
+}
+
+.login.verified #verifiedMark {
+    display: flex;
+    animation: verifiedPop .6s ease-out;
+}
+
+@keyframes verifiedPop {
+    from {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes checkAppear {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+
+
+#final {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background:
+        radial-gradient(circle at center,
+        #164b7c,
+        #071a39,
+        #020817);
+
+    z-index: 5;
+    overflow: hidden;
+
+    animation: reveal 2s ease;
+}
+
+
+
+.final-teddy {
+    font-size: 110px;
+    margin-bottom: 20px;
+
+    filter: drop-shadow(0 0 25px #57bfff);
+
+    animation: teddyFloat 3s infinite ease-in-out;
+
+    z-index: 3;
+}
+
+
+#final h1 {
+    color: #d7f2ff;
+
+    text-align: center;
+    padding: 20px;
+
+    font-size: clamp(32px, 8vw, 55px);
+
+    text-shadow:
+        0 0 15px #52baff,
+        0 0 45px #168bff;
+
+    animation: glow 2s infinite alternate;
+
+    z-index: 3;
+}
+
+
+.final-flower {
+    position: absolute;
+    font-size: 55px;
+    opacity: .8;
+
+    animation: flowerFloat 5s infinite ease-in-out alternate;
+}
+
+.f1 {
+    top: 10%;
+    left: 10%;
+}
+
+.f2 {
+    top: 15%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.f3 {
+    bottom: 10%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.f4 {
+    bottom: 12%;
+    right: 12%;
+    animation-delay: 1.5s;
+}
+
+@keyframes flowerFloat {
+    from {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    to {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+
+
+.particle {
+    position: fixed;
+    bottom: -40px;
+
+    pointer-events: none;
+
+    color: #b5e5ff;
+
+    z-index: 8;
+
+    animation: float 7s linear forwards;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+
+        text-shadow:
+            0 0 30px #70ceff,
+            0 0 70px #168bff;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+
+    .otp {
+        gap: 15px 18px;
+        grid-template-columns: repeat(3, 58px);
+    }
+
+    .otp input {
+        width: 58px;
+        height: 58px;
+    }
+
+    .final-teddy {
+        font-size: 90px;
+    }
+
+    .final-flower {
+        font-size: 38px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="decoration flower1">🌸</div>
+<div class="decoration flower2">🪻</div>
+<div class="decoration flower3">✿</div>
+<div class="decoration flower4">❀</div>
+
+
+
+
+<div class="login" id="login">
+
+    <div class="teddy">🧸</div>
+
+    <h1>From Kim<h1>
+
+    <p class="subtitle">
+        Enter the 6-digit secret code to unlock your surprise
+    </p>
+
+    <div class="otp" id="otp">
+
+        <input maxlength="1" inputmode="numeric" autofocus>
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+
+    </div>
+
+    <div id="verifiedMark">
+        <span>✓</span>
+    </div>
+
+    <div id="feedback"></div>
+
+</div>
+
+
+
+<div id="final">
+
+    <div class="final-flower f1">🌸</div>
+    <div class="final-flower f2">🪻</div>
+    <div class="final-flower f3">❀</div>
+    <div class="final-flower f4">🌷</div>
+
+    <div class="final-teddy">🧸</div>
+
+    <h1>Happy Monthsary, Love</h1>
+
+</div>
+
+
+<script>
+
+
+
+const secretCode = "100426";
+
+
+
+
+const inputs = [
+    ...document.querySelectorAll(".otp input")
+];
+
+const otp = document.getElementById("otp");
+
+const login = document.getElementById("login");
+
+const finalScreen = document.getElementById("final");
+
+const feedback = document.getElementById("feedback");
+
+
+let unlocked = false;
+
+
+
+
+inputs.forEach((input, index) => {
+
+    input.addEventListener("input", () => {
+
+        if (unlocked) return;
+
+        // NUMBERS ONLY
+
+        input.value = input.value
+            .replace(/\D/g, "")
+            .slice(-1);
+
+
+
+        if (input.value && index < 5) {
+
+            inputs[index + 1].focus();
+
+        }
+
+
+        
+
+        const code = inputs
+            .map(i => i.value)
+            .join("");
+
+
+        if (code.length === 6) {
+
+            if (code === secretCode) {
+
+                unlocked = true;
+
+                inputs.forEach(i => i.blur());
+
+                feedback.textContent = "";
+
+            
+
+                otp.classList.add("verifying");
+
+
+            
+
+                setTimeout(() => {
+
+                  
+
+                    otp.style.display = "none";
+
+
+             
+                    login.classList.add("verified");
+
+
+                  
+
+                    setTimeout(() => {
+
+                        login.classList.add("hide");
+
+
+                        setTimeout(() => {
+
+                            finalScreen.style.display = "flex";
+
+
+                      
+
+                            setInterval(createParticle, 300);
+
+                        }, 1000);
+
+                    }, 1000);
+
+                }, 7000);
+
+
+            } else {
+
+                
+
+                feedback.textContent =
+                    "Wrong code. Try again.";
+
+                setTimeout(() => {
+
+                    inputs.forEach(i => i.value = "");
+
+                    inputs[0].focus();
+
+                    feedback.textContent = "";
+
+                }, 800);
+
+            }
+
+        }
+
+    });
+
+
+
+
+    input.addEventListener("keydown", e => {
+
+        if (
+            e.key === "Backspace" &&
+            !input.value &&
+            index > 0
+        ) {
+
+            inputs[index - 1].focus();
+
+        }
+
+    });
+
+});
+
+
+
+
+function createParticle() {
+
+    const p = document.createElement("div");
+
+    const symbols = [
+
+        "🌸",
+        "❀",
+        "✿",
+        "🪻",
+        "♡",
+        "✦",
+        "✨",
+        "💙"
+
+    ];
+
+
+    p.className = "particle";
+
+    p.textContent =
+        symbols[
+            Math.floor(Math.random() * symbols.length)
+        ];
+
+
+    p.style.left =
+        Math.random() * 100 + "vw";
+
+
+    p.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+
+    p.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+
+    document.body.appendChild(p);
+
+
+    
+
+    setTimeout(() => {
+
+        p.remove();
+
+    }, 10000);
+
+}
+
+</script>
+
+</body>
+</html>
